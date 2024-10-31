@@ -6,7 +6,7 @@ pipeline {
         maven 'M2_HOME'
     }
 
-    environment {
+  /*  environment {
         EMAIL_RECIPIENTS = 'nouha.sedraoui@esprit.tn'
         PRE_BUILD_SUBJECT = "Pre-Build Notification - ${JOB_NAME} #${BUILD_NUMBER}"
         PRE_BUILD_BODY = """
@@ -126,12 +126,12 @@ Jenkins Automation
                     )
                 }
             }
-        }
+        }*/
 
         stage('GIT') {
             steps {
-                git branch: 'NouhaSedraoui',
-                    url: 'https://github.com/Melek-ElHajri/Projet-Devops.git'
+                git branch: 'testJunit',
+                    url: 'https://github.com/nouhasedraoui/DevOps--JunitTest.git'
             }
         }
 
@@ -184,7 +184,7 @@ Jenkins Automation
         }
         */
 
-        stage('Success Notification') {
+      /*  stage('Success Notification') {
             steps {
                 script {
                     if (currentBuild.result == 'SUCCESS') {
@@ -228,4 +228,4 @@ Jenkins Automation
             }
         }
     }
-}
+}*/

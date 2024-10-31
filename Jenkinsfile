@@ -6,7 +6,7 @@ pipeline {
         maven 'M2_HOME'
     }
 
-  /*  environment {
+    /* environment {
         EMAIL_RECIPIENTS = 'nouha.sedraoui@esprit.tn'
         PRE_BUILD_SUBJECT = "Pre-Build Notification - ${JOB_NAME} #${BUILD_NUMBER}"
         PRE_BUILD_BODY = """
@@ -96,7 +96,7 @@ We urge you to check the Jenkins logs for detailed information about this issue.
 Thank you for your attention,
 Jenkins Automation
 """
-    }
+    } */
 
     stages {
         stage('Error Handling') {
@@ -126,7 +126,7 @@ Jenkins Automation
                     )
                 }
             }
-        }*/
+        }
 
         stage('GIT') {
             steps {
@@ -184,7 +184,7 @@ Jenkins Automation
         }
         */
 
-      /*  stage('Success Notification') {
+        /* stage('Success Notification') {
             steps {
                 script {
                     if (currentBuild.result == 'SUCCESS') {
@@ -196,7 +196,7 @@ Jenkins Automation
                     }
                 }
             }
-        }
+        } */
     }
 
     post {
@@ -228,4 +228,4 @@ Jenkins Automation
             }
         }
     }
-}*/
+}

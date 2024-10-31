@@ -99,7 +99,7 @@ Jenkins Automation
     } */
 
     stages {
-        stage('Error Handling') {
+        /* stage('Error Handling') {
             steps {
                 script {
                     try {
@@ -128,6 +128,7 @@ Jenkins Automation
             }
         }
 
+        // GIT stage
         stage('GIT') {
             steps {
                 git branch: 'testJunit',

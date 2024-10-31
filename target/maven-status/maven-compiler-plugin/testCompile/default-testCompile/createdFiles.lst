@@ -1,0 +1,12 @@
+tn\esprit\tpfoyer\Controllers\BlocRestControllerTest.class
+tn\esprit\tpfoyer\Controllers\FoyerRestControllerTest.class
+tn\esprit\tpfoyer\Controllers\ReservationRestControllerTest.class
+tn\esprit\tpfoyer\Controllers\UniversiteRestControllerTest.class
+tn\esprit\tpfoyer\Services\ReservationServiceImplTest.class
+tn\esprit\tpfoyer\Controllers\ChambreRestControllerTest.class
+tn\esprit\tpfoyer\Controllers\EtudiantRestControllerTest.class
+tn\esprit\tpfoyer\Services\ChambreServiceImplTest.class
+tn\esprit\tpfoyer\Services\FoyerServiceImplTest.class
+tn\esprit\tpfoyer\Services\UniversiteServiceImplTest.class
+tn\esprit\tpfoyer\Services\EtudiantServiceImplTest.class
+tn\esprit\tpfoyer\Services\BlocServiceImplTest.class

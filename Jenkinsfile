@@ -6,7 +6,7 @@ pipeline {
         maven 'M2_HOME'
     }
 
-    /* environment {
+    environment {
         EMAIL_RECIPIENTS = 'nouha.sedraoui@esprit.tn'
         PRE_BUILD_SUBJECT = "Pre-Build Notification - ${JOB_NAME} #${BUILD_NUMBER}"
         PRE_BUILD_BODY = """
@@ -96,39 +96,9 @@ We urge you to check the Jenkins logs for detailed information about this issue.
 Thank you for your attention,
 Jenkins Automation
 """
-    } */
+    }
 
     stages {
-        /* stage('Error Handling') {
-            steps {
-                script {
-                    try {
-                        echo 'Pipeline execution begins...'
-                    } catch (Exception e) {
-                        mail(
-                            to: "${EMAIL_RECIPIENTS}",
-                            subject: "${ERROR_SUBJECT}",
-                            body: "${ERROR_BODY}"
-                        )
-                        error("Pipeline aborted due to syntax error or exception: ${e}")
-                    }
-                }
-            }
-        }
-
-        stage('Pre-Build Notification') {
-            steps {
-                script {
-                    mail(
-                        to: "${EMAIL_RECIPIENTS}",
-                        subject: "${PRE_BUILD_SUBJECT}",
-                        body: "${PRE_BUILD_BODY}"
-                    )
-                }
-            }
-        }
-
-        // GIT stage
         stage('GIT') {
             steps {
                 git branch: 'testJunit',
@@ -141,63 +111,6 @@ Jenkins Automation
                 sh 'mvn clean compile'
             }
         }
-
-        // Uncomment these stages as needed
-        /*
-        stage('Deploy to Nexus') {
-            steps {
-                sh 'mvn deploy -DskipTests -DaltDeploymentRepository=deploymentRepo::default::http://192.168.33.10:8081/repository/maven-releases/'
-            }
-        }
-
-        stage('Scan') {
-            steps {
-                withSonarQubeEnv('sq1') {
-                    sh 'mvn sonar:sonar'
-                }
-            }
-        }
-
-        stage('Build Docker Image') {
-            steps {
-                sh 'sudo docker build -t rymasd29/tp-foyer:5.0.0 .'
-            }
-        }
-
-        stage('Push Docker Image to DockerHub') {
-            steps {
-                sh '''
-                    sudo docker login -u rymasd29 -p 223JFT4309
-                    sudo docker push rymasd29/tp-foyer:5.0.0
-                '''
-            }
-        }
-
-        stage('Run Docker Compose') {
-            steps {
-                script {
-                    sh '''
-                        sudo docker-compose down -v
-                        sudo docker-compose up -d
-                    '''
-                }
-            }
-        }
-        */
-
-        /* stage('Success Notification') {
-            steps {
-                script {
-                    if (currentBuild.result == 'SUCCESS') {
-                        mail(
-                            to: "${EMAIL_RECIPIENTS}",
-                            subject: "${SUCCESS_SUBJECT}",
-                            body: "${SUCCESS_BODY}"
-                        )
-                    }
-                }
-            }
-        } */
     }
 
     post {

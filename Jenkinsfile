@@ -17,7 +17,7 @@ pipeline {
             }
         }
 
-       /* stage('Compile Stage') {
+        stage('Compile Stage') {
             steps {
                 script {
                     // Check out the latest code from the branch again before compiling
@@ -25,9 +25,9 @@ pipeline {
                 }
                 sh 'mvn clean compile'
             }
-        }*/
+        }
 
-        stage('Scan') {
+        /*stage('Scan') {
             steps {
                 script {
                     // Check out the latest code from the branch again before scanning
@@ -37,6 +37,6 @@ pipeline {
                     sh 'mvn sonar:sonar'
                 }
             }
-        }
+        }*/
     }
 }

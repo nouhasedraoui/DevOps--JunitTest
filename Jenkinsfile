@@ -17,7 +17,7 @@ pipeline {
             }
         }
 
-        stage('Compile Stage') {
+       /* stage('Compile Stage') {
             steps {
                 script {
                     // Check out the latest code from the branch again before compiling
@@ -25,7 +25,7 @@ pipeline {
                 }
                 sh 'mvn clean compile'
             }
-        }
+        }*/
 
         stage('Scan') {
             steps {
